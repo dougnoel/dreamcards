@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://6yfar4gus14g"]
+
+[ext_resource type="FontFile" uid="uid://b8famgn26php0" path="res://Fonts/Lato-Regular.ttf" id="1_aaokr"]
+[ext_resource type="StyleBox" uid="uid://0ip5y3kvxvri" path="res://Themes/CardBackStyle.tres" id="2_etsqp"]
+[ext_resource type="FontFile" uid="uid://leses2qb35oy" path="res://Fonts/Lato-Bold.ttf" id="3_8mk67"]
+[ext_resource type="FontFile" uid="uid://dbmkv3o5ogvjb" path="res://Fonts/Oswald-SemiBold.ttf" id="3_t35jl"]
+[ext_resource type="FontFile" uid="uid://0twqsnlw4p5" path="res://Fonts/Lato-BoldItalic.ttf" id="4_k1oes"]
+[ext_resource type="FontFile" uid="uid://dj4perr8bhjug" path="res://Fonts/Lato-Italic.ttf" id="5_fyivm"]
+
+[resource]
+default_font = ExtResource("3_t35jl")
+default_font_size = 10
+LineEdit/fonts/font = ExtResource("1_aaokr")
+Panel/styles/panel = ExtResource("2_etsqp")
+RichTextLabel/font_sizes/bold_font_size = 10
+RichTextLabel/font_sizes/bold_italics_font_size = 10
+RichTextLabel/font_sizes/italics_font_size = 10
+RichTextLabel/font_sizes/normal_font_size = 10
+RichTextLabel/fonts/bold_font = ExtResource("3_8mk67")
+RichTextLabel/fonts/bold_italics_font = ExtResource("4_k1oes")
+RichTextLabel/fonts/italics_font = ExtResource("5_fyivm")
+RichTextLabel/fonts/normal_font = ExtResource("1_aaokr")
+TextEdit/fonts/font = ExtResource("1_aaokr")

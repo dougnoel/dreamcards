@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjfwn50y6k652"]
+
+[ext_resource type="Script" path="res://Inventory Test/drop_zone.gd" id="1_j2tdu"]
+[ext_resource type="Texture2D" uid="uid://bus8ebffiybu5" path="res://Icons/gui.png" id="2_00jd4"]
+[ext_resource type="Script" path="res://Inventory Test/Inventory Slot.gd" id="3_apc7f"]
+[ext_resource type="Texture2D" uid="uid://caw15f4u5wt66" path="res://Icons/magical items.png" id="4_frw0t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjxcb"]
+atlas = ExtResource("2_00jd4")
+region = Rect2(151, 7, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4ie5"]
+atlas = ExtResource("4_frw0t")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Drop Zone" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j2tdu")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -180.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Inventory Slot" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Potion" type="TextureRect" parent="GridContainer/Inventory Slot"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_d4ie5")
+stretch_mode = 5
+
+[node name="Inventory Slot2" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Inventory Slot3" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Inventory Slot4" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Inventory Slot5" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Inventory Slot6" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Inventory Slot7" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Inventory Slot8" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")
+
+[node name="Inventory Slot9" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_fjxcb")
+stretch_mode = 3
+script = ExtResource("3_apc7f")

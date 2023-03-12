@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://tqpdnxresc28"]
+
+[ext_resource type="Theme" uid="uid://6yfar4gus14g" path="res://Themes/wild_jam_card.tres" id="1_u8gba"]
+[ext_resource type="Script" path="res://Cards/deck.gd" id="2_cggh2"]
+[ext_resource type="Texture2D" uid="uid://ctnnyalhnggdh" path="res://Branding/GWJ-Full-Logo-tag-Orange2.svg" id="3_4janx"]
+
+[node name="Deck" type="Panel"]
+custom_minimum_size = Vector2(205, 285)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_u8gba")
+script = ExtResource("2_cggh2")
+
+[node name="Card Back Art" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -102.5
+offset_right = 899.5
+offset_bottom = 897.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.201, 0.201)
+texture_normal = ExtResource("3_4janx")
+
+[connection signal="pressed" from="Card Back Art" to="." method="_on_card_back_art_pressed"]
