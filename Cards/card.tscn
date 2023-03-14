@@ -1,19 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct20n2182t6a"]
+[gd_scene load_steps=6 format=3 uid="uid://ct20n2182t6a"]
 
+[ext_resource type="Script" path="res://Cards/card_editor.gd" id="1_ag4fa"]
 [ext_resource type="Theme" uid="uid://6yfar4gus14g" path="res://Themes/wild_jam_card.tres" id="1_jrkkh"]
-[ext_resource type="Script" path="res://Cards/card.gd" id="2_2toy8"]
 [ext_resource type="Texture2D" uid="uid://y53n05uc447w" path="res://Images/Giant Growth.png" id="3_chkx4"]
+[ext_resource type="Texture2D" uid="uid://d33wjiy2aefai" path="res://Images/BlanchwoodArmor__76685 (2).jpg" id="3_j2jm5"]
 [ext_resource type="FontFile" uid="uid://b8famgn26php0" path="res://Fonts/Lato-Regular.ttf" id="4_hhwhx"]
 
-[node name="Card" type="Panel"]
-custom_minimum_size = Vector2(102, 142)
-offset_right = 205.0
-offset_bottom = 285.0
+[node name="Card Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ag4fa")
+
+[node name="ToolPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 494.0
+offset_bottom = 648.0
+
+[node name="Save Button" type="Button" parent="ToolPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -15.5
+offset_right = 22.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Save Card"
+
+[node name="Card" type="Panel" parent="."]
+custom_minimum_size = Vector2(205, 285)
+layout_mode = 2
+offset_left = 614.0
+offset_top = 177.0
+offset_right = 819.0
+offset_bottom = 462.0
 theme = ExtResource("1_jrkkh")
-script = ExtResource("2_2toy8")
 metadata/_edit_group_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Card"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,45 +58,119 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/MarginContainer"]
 layout_mode = 2
 
-[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="Card/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Card Name" type="Label" parent="MarginContainer/VBoxContainer/HSplitContainer"]
+[node name="Card Name" type="Label" parent="Card/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "Blanchwood Armor
+"
+
+[node name="Cost" type="Label" parent="Card/MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "2"
+
+[node name="Card Image" type="TextureRect" parent="Card/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+texture = ExtResource("3_j2jm5")
+expand_mode = 2
+
+[node name="Card Type" type="Label" parent="Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Enchantment - Aura
+"
+
+[node name="Game Text" type="Label" parent="Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hhwhx")
+text = "Enchant Creature
+Enchanted creature gets +1 / +1 for each Forest you control."
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Flavor Text" type="RichTextLabel" parent="Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[i]Some armor is forged, some is forested.[/i]"
+
+[node name="SaveFileDialog" type="FileDialog" parent="."]
+size = Vector2i(800, 300)
+min_size = Vector2i(800, 300)
+ok_button_text = "Save"
+access = 2
+filters = PackedStringArray("*.png")
+
+[node name="Giant Growth" type="Panel" parent="."]
+custom_minimum_size = Vector2(205, 285)
+offset_left = 889.0
+offset_top = 181.0
+offset_right = 1094.0
+offset_bottom = 466.0
+theme = ExtResource("1_jrkkh")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Giant Growth"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Giant Growth/MarginContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Giant Growth/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Card Name" type="Label" parent="Giant Growth/MarginContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 text = "Giant Growth
 "
 
-[node name="Cost" type="Label" parent="MarginContainer/VBoxContainer/HSplitContainer"]
+[node name="Cost" type="Label" parent="Giant Growth/MarginContainer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "3"
 
-[node name="Card Image" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="Card Image" type="TextureRect" parent="Giant Growth/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 texture = ExtResource("3_chkx4")
 expand_mode = 2
 
-[node name="Card Type" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Card Type" type="Label" parent="Giant Growth/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Instant
 "
 
-[node name="Game Text" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Game Text" type="Label" parent="Giant Growth/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_hhwhx")
 text = "Target creature gets +3/+3 until end of turn."
 autowrap_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Giant Growth/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Flavor Text" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="Flavor Text" type="RichTextLabel" parent="Giant Growth/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 text = "[i]\"Imagine being scared of pixies. Just smoosh them under your boot!\"
 - Kerish, Urzan Mechanist[/i]"
+
+[connection signal="pressed" from="ToolPanel/Save Button" to="." method="_on_save_button_pressed"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]

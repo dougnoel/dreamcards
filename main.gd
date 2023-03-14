@@ -1,15 +1,15 @@
 extends Control
 
-@export var card_front_scene: PackedScene = preload("res://Cards/card.tscn")
+@export var card_front: PackedScene = preload("res://Cards/giant_growth_card.tscn")
 
+var deck: Array
+var hand = 0
 
 func _ready():
-	pass # Replace with function body.
+	deck = [1,2,1,2,1,2,1,2,1]
 
 
 func _can_drop_data(_pos, _data):
-#	if data is Card:
-#		data.position = pos
 	return true
 
 
@@ -18,11 +18,12 @@ func _drop_data(pos, data):
 	data.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
+# Returns a random card from the deck
+func _draw_card():
+	pass
+	
 
 func _on_deck_draw_card():
-	var instance = card_front_scene.instantiate()
-	await get_tree().process_frame
-	instance.scale = instance.scale * 0.5
-	instance.position = Vector2(500.0, 200.0)
+	var instance = card_front.instantiate()
 	$"Player Hand".add_child(instance)
 
