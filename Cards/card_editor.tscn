@@ -110,6 +110,7 @@ filters = PackedStringArray("*.png")
 
 [node name="Giant Growth" type="Panel" parent="."]
 custom_minimum_size = Vector2(205, 285)
+layout_mode = 0
 offset_left = 889.0
 offset_top = 181.0
 offset_right = 1094.0
